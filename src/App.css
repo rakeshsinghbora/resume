@@ -7,16 +7,15 @@
 .nav ul li {
   padding: 2px 2px;
   margin: 2% 2%;
-  font-size: 17px;
+  font-size: 19px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: inline-flex;
   list-style: none;
 }
-li{
+li {
   list-style: none;
 }
-li>li
-{
+li > li {
   margin: 4px 10%;
   list-style: disc;
 }
@@ -38,7 +37,7 @@ a:visited {
 }
 #fir1 {
   margin: 2px 2px;
-  color: blue;
+  color: rgb(24, 185, 254);
   text-align: center;
 }
 .title {
@@ -46,7 +45,7 @@ a:visited {
   margin-left: 2%;
   text-align: inherit;
   font-weight: bold;
-  color: blue;
+  color: rgb(24, 185, 254);
 }
 h3 {
   font-weight: unset;

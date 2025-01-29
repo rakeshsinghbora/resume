@@ -1,11 +1,20 @@
 import React from "react";
 
-export default function Academic() {
+export default function Academic(props) {
   return (
     <div>
       <h3 className="title">Academic</h3>
       <ul className="skill">
-        <li>
+        {props.acad.map((act, index) => {
+          return (
+            <li key={index}>
+              ❖ {act.title}
+              <li>{act.desc1}</li>
+              <li>{act.desc2}</li>
+            </li>
+          );
+        })}
+        {/* <li>
           ❖ EZRENTAL - Car Rental Website
           <li>
             As a part of my BCA final year project, I developed this Car Rental
@@ -24,7 +33,7 @@ export default function Academic() {
             in India using python.
           </li>
           <li>Technology used: Python Libraries.</li>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
