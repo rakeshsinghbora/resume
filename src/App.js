@@ -1,10 +1,18 @@
 import github from "./component/github.png";
+import lkd from "./component/linkedin.png";
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
 import "./App.css";
 import Skills from "./component/Skills";
 import Education from "./component/Education";
 import Certification from "./component/certification";
 import Academic from "./component/Academic";
 import Navbar from "./component/Navbar";
+import About from "./component/About";
+import Contact from "./component/Contact";
+
 function App() {
   let skill = [
     "Java",
@@ -53,19 +61,46 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <h2 id="fir1">Rakesh Singh Bora</h2>
-      <h3>rakeshsinghbora3@gmail.com</h3>
-      <div className="git">
-        <img alt="github" src={github}></img>
-        <a target="blank" href="https://github.com/rakeshsinghbora">
-          @rakeshsinghbora
-        </a>
-      </div>
-      <Skills skills={skill} />
-      <Education education={education} />
-      <Academic acad={acad} />
-      <Certification certification={certification} />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <h2 id="fir1">Rakesh Singh Bora</h2>
+                <a href="mailto:rakeshsinghbora3@gmail.com">
+                  <h3>rakeshsinghbora3@gmail.com</h3>
+                </a>
+                <div className="contact">
+                  <div className="git">
+                    <img alt="github" src={github}></img>
+                    <a target="blank" href="https://github.com/rakeshsinghbora">
+                      @rakeshsinghbora
+                    </a>
+                  </div>
+                  <div className="git linkd">
+                    <img alt="linkedin" src={lkd}></img>
+                    <a
+                      target="blank"
+                      href="https://linkedin.com/in/rakeshsinghbora"
+                    >
+                      @rakeshsinghbora
+                    </a>
+                  </div>
+                </div>
+                <Skills skills={skill} />
+                <Education education={education} />
+                <Academic acad={acad} />
+                <Certification certification={certification} />
+              </>
+            }
+          />
+          <Route exact path="/about" element={<About></About>} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
